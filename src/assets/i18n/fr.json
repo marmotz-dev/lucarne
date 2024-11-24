@@ -1,0 +1,16 @@
+{
+  "feature": {
+    "account-add": {
+      "login": {
+        "identifier": "Identifiant",
+        "password": "Mot de passe",
+        "add-account": "Ajouter un compte",
+        "invalid-credentials": "Votre identifiant ou votre mot de passe est incorrect",
+        "logging-in": "Connexion...",
+        "fetching-profile": "Récupération du profil...",
+        "adding-account": "Ajout du compte...",
+        "login-success": "Connexion réussie"
+      }
+    }
+  }
+}
