@@ -1,0 +1,12 @@
+<div class="flex justify-center items-center h-full p-4 flex-col gap-5">
+  <p-iftalabel class="w-full">
+    <input [(ngModel)]="identifier" autocomplete="off" fluid id="identifier" pInputText/>
+    <label for="identifier">Identifier</label>
+  </p-iftalabel>
+  <p-iftalabel class="w-full">
+    <input [(ngModel)]="password" autocomplete="off" fluid id="password" pInputText/>
+    <label for="password">Password</label>
+  </p-iftalabel>
+
+  <p-button (click)="addAccount()">Add account</p-button>
+</div>
