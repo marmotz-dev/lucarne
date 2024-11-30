@@ -1,0 +1,38 @@
+<ion-content>
+  <div class="flex flex-col h-full">
+    <form
+      (ngSubmit)="submit()"
+      [formGroup]="loginForm"
+      class="flex justify-center items-center grow p-4 flex-col gap-5"
+    >
+      @if (globalError && loginForm.untouched) {
+        <p-message severity="error">{{ globalError | translate }}</p-message>
+      }
+
+      <p-iftalabel class="w-full">
+        <input autocomplete="off" fluid formControlName="identifier" id="identifier" pInputText/>
+        <label for="identifier">{{ 'feature.account-add.login.identifier' | translate }}</label>
+      </p-iftalabel>
+      <p-iftalabel class="w-full">
+        <p-password fluid formControlName="password" id="password"/>
+        <label for="password">{{ 'feature.account-add.login.password' | translate }}</label>
+      </p-iftalabel>
+
+      <p-button
+        [disabled]="loginForm.invalid"
+        [loading]="connecting"
+        type="submit"
+      >
+        {{ 'feature.account-add.login.add-account' | translate }}
+      </p-button>
+    </form>
+
+    <div [class]="['text-center bg-highlight py-4', {'bg-transparent': !connecting || !loginStatus}] | cls">
+      @if (connecting && loginStatus) {
+        {{ loginStatus | translate }}
+      } @else {
+        &nbsp;
+      }
+    </div>
+  </div>
+</ion-content>

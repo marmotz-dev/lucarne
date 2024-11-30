@@ -1,0 +1,16 @@
+{
+  "feature": {
+    "account-add": {
+      "login": {
+        "identifier": "Identifier",
+        "password": "Password",
+        "add-account": "Add account",
+        "invalid-credentials": "Your identifier or your password is incorrect",
+        "logging-in": "Logging in...",
+        "fetching-profile": "Fetching profile...",
+        "adding-account": "Adding account...",
+        "login-success": "Login successful"
+      }
+    }
+  }
+}

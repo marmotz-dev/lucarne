@@ -1,0 +1,9 @@
+{
+  "apps": [
+    {
+      "appId": "82c2e0cb",
+      "dependencyInstallCommand": "curl -fsSL https://bun.sh/install | bash && . ~/.bashrc && bun i",
+      "webBuildCommand": ". ~/.bashrc && bun run build"
+    }
+  ]
+}
