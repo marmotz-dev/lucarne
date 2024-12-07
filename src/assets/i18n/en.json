@@ -5,12 +5,32 @@
         "identifier": "Identifier",
         "password": "Password",
         "add-account": "Add account",
-        "invalid-credentials": "Your identifier or your password is incorrect",
-        "logging-in": "Logging in...",
-        "fetching-profile": "Fetching profile...",
-        "adding-account": "Adding account...",
-        "login-success": "Login successful"
+        "errors" : {
+          "invalid-credentials": "Your identifier or your password is incorrect"
+        },
+        "connecting": {
+          "connecting": "Logging in...",
+          "fetching-profile": "Fetching profile...",
+          "adding-account": "Adding account...",
+          "connected": "Login successful"
+        }
       }
+    },
+    "feed": {
+      "load-newest-posts": "Load newest posts",
+      "load-more-posts": "Load more posts"
+    }
+  },
+  "shared": {
+    "errors": {
+      "unknown": "An unknown error occurred"
+    },
+    "time-ago": {
+      "seconds": "{{count}}s",
+      "minutes": "{{count}}m",
+      "hours": "{{count}}h",
+      "days": "{{count}}d",
+      "months": "{{count}}mo"
     }
   }
 }

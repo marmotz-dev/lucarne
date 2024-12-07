@@ -7,7 +7,7 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": true,
+    "noPropertyAccessFromIndexSignature": false,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
@@ -19,7 +19,7 @@
     "target": "es2022",
     "module": "es2020",
     "lib": [
-      "es2018",
+      "ES2022",
       "dom"
     ],
     "useDefineForClassFields": false,
@@ -28,9 +28,9 @@
     "paths": {
       "@app/*": ["src/app/*"],
       "@env/*": ["src/environments/*"],
-      "@shared/*": ["src/app/shared/*"],
-      "@features/*": ["src/app/features/*"],
-      "@assets/*": ["src/assets/*"]}
+      "@assets/*": ["src/assets/*"]
+    },
+    "skipLibCheck": true
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

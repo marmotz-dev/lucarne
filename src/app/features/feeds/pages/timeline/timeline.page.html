@@ -1,0 +1,34 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button />
+    </ion-buttons>
+    <ion-title>Timeline1</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="loadNewestPost()">
+        <ion-icon
+          [class]="{ 'animate-spin': refreshing }"
+          name="refresh-sharp"
+          slot="icon-only"
+        />
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content
+  #content
+  (ionScrollEnd)="saveScrollPosition()"
+  [scrollEvents]="true"
+>
+  @if (refreshing && !feedStorage?.feedPosts?.length) {
+    <l-ui-centered>Refreshing...</l-ui-centered>
+  } @else {
+    <l-feed
+      [feedPosts]="feedPosts"
+      (ready)="onFeedReady()"
+      (loadNewestPosts)="loadNewestPost()"
+      (loadOlderPosts)="loadOlderPost()"
+    />
+  }
+</ion-content>

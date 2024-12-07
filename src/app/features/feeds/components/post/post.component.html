@@ -1,0 +1,23 @@
+<div class="flex flex-col py-2 px-4 w-full border-b">
+  @if (repostedBy) {
+    <div class="flex flex-row w-full gap-2 items-center text-xs pl-11" data-testid="repost">
+      <ion-icon name="repeat-outline"/>
+      <span>Republié par {{ repostedBy }}</span>
+    </div>
+  }
+
+  <div [class]="['flex flex-row gap-4 w-full', {'pt-2': !repostedBy}] |cls" data-testid="post">
+    <l-post-avatar [author]="post.author"/>
+    <div class="w-full" data-testid="post-content">
+      <l-post-header [author]="post.author" [createdAt]="post.record.createdAt"/>
+      <l-post-text [record]="post.record"/>
+      <l-post-embed [embed]="post.embed"/>
+    </div>
+  </div>
+
+  <l-post-actions [post]="post" />
+
+  <div class="hidden">
+    {{ post | json }}
+  </div>
+</div>

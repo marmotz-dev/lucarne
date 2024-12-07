@@ -1,0 +1,9 @@
+<ion-content>
+  @if (postThread) {
+    <l-post [post]="postThread.post" />
+
+    <div class="hidden">
+      {{ postThread | json }}
+    </div>
+  }
+</ion-content>

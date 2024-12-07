@@ -1,0 +1,21 @@
+<p class="whitespace-pre-line text-wrap text-base">
+  @if (richText) {
+    @for (segment of richText.segments(); track $index) {
+      @if (segment.isMention()) {
+        <a class="text-blue-500" [routerLink]="['/profile', segment.mention?.did]">
+          {{ segment.text }}
+        </a>
+      } @else if (segment.isLink()) {
+        <a class="text-blue-500" [routerLink]="segment.link?.uri">
+          {{ segment.text }}
+        </a>
+      } @else if (segment.isTag()) {
+        <span class="text-blue-500">{{ segment.text }}</span>
+      } @else {
+        {{ segment.text }}
+      }
+    }
+  } @else {
+    {{ record.text }}
+  }
+</p>

@@ -1,0 +1,38 @@
+<div
+  #wrapper
+  class="h-full"
+>
+  @if (!isReady || !feedPosts) {
+    <l-ui-centered>Chargement en cours.</l-ui-centered>
+  } @else if (feedPosts.length) {
+    <div>
+      <div class="text-center border-b">
+        <p-button
+          link="true"
+          (click)="loadNewestPosts.emit()"
+          styleClass="text-xs"
+        >
+          {{ 'feature.feed.load-newest-posts' | translate }}
+        </p-button>
+      </div>
+      @for (feedPost of feedPosts; track feedPost.post.uri) {
+        <l-feed-post
+          [attr.data-post-uri]="feedPost.post.uri"
+          [viewPost]="feedPost"
+          (onClick)="openPost($event)"
+        />
+      }
+      <div class="text-center">
+        <p-button
+          link="true"
+          (click)="loadOlderPosts.emit()"
+          styleClass="text-xs"
+        >
+          {{ 'feature.feed.load-more-posts' | translate }}
+        </p-button>
+      </div>
+    </div>
+  } @else {
+    <l-ui-centered>No posts found.</l-ui-centered>
+  }
+</div>

@@ -6,30 +6,61 @@
       class="flex justify-center items-center grow p-4 flex-col gap-5"
     >
       @if (globalError && loginForm.untouched) {
-        <p-message severity="error">{{ globalError | translate }}</p-message>
+        <l-ui-message type="error">
+          @switch (globalError) {
+            @case ('invalid-credentials') {
+              {{ 'feature.account-add.login.errors.invalid-credentials' | translate }}
+            }
+
+            @case ('unknown-error') {
+              {{ 'shared.errors.unknown' | translate }}
+            }
+          }
+        </l-ui-message>
       }
 
-      <p-iftalabel class="w-full">
-        <input autocomplete="off" fluid formControlName="identifier" id="identifier" pInputText/>
-        <label for="identifier">{{ 'feature.account-add.login.identifier' | translate }}</label>
-      </p-iftalabel>
-      <p-iftalabel class="w-full">
-        <p-password fluid formControlName="password" id="password"/>
-        <label for="password">{{ 'feature.account-add.login.password' | translate }}</label>
-      </p-iftalabel>
+      <l-ui-form-input-text
+        [label]="'feature.account-add.login.identifier' | translate"
+        class="w-full"
+        formControlName="identifier"
+        id="identifier"
+      />
 
-      <p-button
+      <l-ui-form-input-password
+        [label]="'feature.account-add.login.password' | translate"
+        class="w-full"
+        formControlName="password"
+        id="password"
+      />
+
+      <l-ui-button
         [disabled]="loginForm.invalid"
         [loading]="connecting"
         type="submit"
       >
         {{ 'feature.account-add.login.add-account' | translate }}
-      </p-button>
+      </l-ui-button>
     </form>
 
-    <div [class]="['text-center bg-highlight py-4', {'bg-transparent': !connecting || !loginStatus}] | cls">
+    <div [class]="['text-center bg-highlight py-4', { 'bg-transparent': !connecting || !loginStatus }] | cls">
       @if (connecting && loginStatus) {
-        {{ loginStatus | translate }}
+        @switch (loginStatus) {
+          @case ('connecting') {
+            {{ 'feature.account-add.login.connecting.connecting' | translate }}
+          }
+
+          @case ('fetching-profile') {
+            {{ 'feature.account-add.login.connecting.fetching-profile' | translate }}
+          }
+
+          @case ('adding-account') {
+            {{ 'feature.account-add.login.connecting.adding-account' | translate }}
+          }
+
+          @case ('connected') {
+            {{ 'feature.account-add.login.connecting.connected' | translate }}
+          }
+        }
       } @else {
         &nbsp;
       }

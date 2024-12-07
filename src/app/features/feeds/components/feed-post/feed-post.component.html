@@ -1,0 +1,6 @@
+<div>
+  <l-post (onClick)="handleClick(viewPost.post)"  [post]="viewPost.post" [repostedBy]="isRepostedBy"/>
+  <div class="hidden">
+    {{ viewPost | json }}
+  </div>
+</div>

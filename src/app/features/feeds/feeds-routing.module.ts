@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FeedsComponent } from '@features/feeds/components/feeds/feeds.component';
-import { TimelineComponent } from '@features/feeds/components/timeline/timeline.component';
+import { FeedsLayout } from '@app/features/feeds/layouts/feeds/feeds.layout';
+import { PostPage } from '@app/features/feeds/pages/post/post.page';
+import { TimelinePage } from '@app/features/feeds/pages/timeline/timeline.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: FeedsComponent,
+    component: FeedsLayout,
     children: [
       {
         path: '',
@@ -15,7 +16,11 @@ const routes: Routes = [
       },
       {
         path: 'timeline',
-        component: TimelineComponent,
+        component: TimelinePage,
+      },
+      {
+        path: 'post/:authorHandle/:postId',
+        component: PostPage,
       },
     ],
   },
