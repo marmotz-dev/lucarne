@@ -1,7 +1,12 @@
 {
-  "name": "Lucarne",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
+  "defaultProject": "lucarne",
+  "projects": {
+    "lucarne": {
+      "name": "Lucarne",
+      "integrations": {
+        "capacitor": {}
+      },
+      "type": "angular"
+    }
+  }
 }

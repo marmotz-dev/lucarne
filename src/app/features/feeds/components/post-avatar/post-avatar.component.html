@@ -1,0 +1,7 @@
+<ion-avatar [class]="['flex-none shadow', small ? 'size-4' : 'size-9'] | cls">
+  @if (author.avatar) {
+    <img [ngSrc]="author.avatar" alt="avatar" height="32" width="32"/>
+  } @else {
+    <ion-icon name="person-circle-sharp"/>
+  }
+</ion-avatar>

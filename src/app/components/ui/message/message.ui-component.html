@@ -1,0 +1,6 @@
+<div [class]="['p-2 rounded-md shadow', {
+  'bg-amber-100 border-amber-200 text-amber-700': type === 'info',
+  'bg-red-100 border-red-200 text-red-700': type === 'error',
+}] | cls">
+  <ng-content />
+</div>

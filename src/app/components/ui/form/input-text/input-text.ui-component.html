@@ -1,0 +1,11 @@
+<p-iftalabel>
+  <input
+    (input)="valueChanged($event)"
+    [id]="id"
+    [value]="value"
+    fluid
+    pInputText
+    type="text"
+  />
+  <label [for]="id">{{ label }}</label>
+</p-iftalabel>

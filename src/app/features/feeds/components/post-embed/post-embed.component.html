@@ -1,0 +1,23 @@
+@if (embed && type !== 'unknown' && type !== 'none') {
+  <div class="py-2">
+    @switch (type) {
+<!--      @case ('video') {-->
+        <!--    <l-feed-post-embed-video [embed]="embed" />-->
+<!--      }-->
+
+      @case ('images') {
+        <l-post-embed-images [embed]="getEmbedAsImages()"/>
+      }
+
+      @case ('record') {
+        <l-post-embed-record [embed]="getEmbedAsRecord()"/>
+      }
+
+      @default {
+        <div class="text-xs text-right italic text-muted-color">
+          Embed type "{{ type }}" not yet supported.
+        </div>
+      }
+    }
+  </div>
+}

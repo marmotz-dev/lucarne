@@ -1,0 +1,19 @@
+<img [alt]="embed.images[0].alt" [src]="embed.images[0].thumb" class="rounded-lg shadow w-full"/>
+
+<!--@if (embed.images.length === 1) {-->
+<!--  <img [alt]="embed.images[0].alt" [src]="embed.images[0].thumb" class="rounded-lg shadow w-full"/>-->
+<!--} @else if (embed.images.length === 2 || embed.images.length === 4) {-->
+<!--  <div class="flex flex-row mt-2">-->
+<!--    @for (image of embed.images; track $index) {-->
+<!--      <img [alt]="image.alt" [src]="image.thumb" class="rounded-lg shadow"/>-->
+<!--    }-->
+<!--  </div>-->
+<!--} @else if (embed.images.length === 3) {-->
+<!--  <div class="flex flex-row mt-2">-->
+<!--    <img [alt]="embed.images[0].alt" [src]="embed.images[0].thumb" class="rounded-lg shadow"/>-->
+<!--    <div class="flex flex-col">-->
+<!--      <img [alt]="embed.images[1].alt" [src]="embed.images[1].thumb" class="rounded-lg shadow"/>-->
+<!--      <img [alt]="embed.images[2].alt" [src]="embed.images[2].thumb" class="rounded-lg shadow"/>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--}-->

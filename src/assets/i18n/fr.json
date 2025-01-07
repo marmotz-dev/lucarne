@@ -5,12 +5,32 @@
         "identifier": "Identifiant",
         "password": "Mot de passe",
         "add-account": "Ajouter un compte",
-        "invalid-credentials": "Votre identifiant ou votre mot de passe est incorrect",
-        "logging-in": "Connexion...",
-        "fetching-profile": "Récupération du profil...",
-        "adding-account": "Ajout du compte...",
-        "login-success": "Connexion réussie"
+        "errors" : {
+          "invalid-credentials": "Votre identifiant ou votre mot de passe est incorrect"
+        },
+        "connecting": {
+          "connecting": "Connexion...",
+          "fetching-profile": "Récupération du profil...",
+          "adding-account": "Ajout du compte...",
+          "connected": "Connexion réussie"
+        }
       }
+    },
+    "feed": {
+      "load-newest-posts": "Charger les posts les plus récents",
+      "load-more-posts": "Charger plus de posts"
+    }
+  },
+  "shared": {
+    "errors": {
+      "unknown": "Une erreur inconnue s'est produite"
+    },
+    "time-ago": {
+      "seconds": "{{count}}s",
+      "minutes": "{{count}}m",
+      "hours": "{{count}}h",
+      "days": "{{count}}j",
+      "months": "{{count}}mo"
     }
   }
 }
